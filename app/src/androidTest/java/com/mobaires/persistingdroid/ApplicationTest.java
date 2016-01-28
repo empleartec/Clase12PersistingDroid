@@ -1,4 +1,4 @@
-package persistdroid.mobaires.com.persistingdroid;
+package com.mobaires.persistingdroid;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

@@ -8,15 +8,30 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.mobaires.persistingdroid.MainActivity">
+    tools:context="com.mobaires.persistingdroid.SharedPrefsActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Persistence Lesson" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="toSharedPrefs"
-        android:text="SharedPreferences"/>
+        android:onClick="doGenerate"
+        android:text="Generar Otro"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="doSave"
+        android:text="Guardar" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="doLoad"
+        android:text="Cargar" />
+
+    <TextView android:id="@+id/nameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"/>
+    <TextView android:id="@+id/scoreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"/>
 </LinearLayout>

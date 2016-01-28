@@ -1,4 +1,4 @@
-package persistdroid.mobaires.com.persistingdroid;
+package com.mobaires.persistingdroid;
 
 import org.junit.Test;
 
