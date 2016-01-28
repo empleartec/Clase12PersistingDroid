@@ -1,5 +1,7 @@
 package com.mobaires.persistingdroid;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,14 +29,25 @@ public class SharedPrefsActivity extends AppCompatActivity {
     public void doGenerate(View v) {
         Random rnd = new Random(System.currentTimeMillis());
         nameText.setText(NAMES[rnd.nextInt(NAMES.length)]);
-        scoreText.setText("Score: " + rnd.nextInt(1200000));
+        scoreText.setText("" + rnd.nextInt(1200000));
     }
 
     public void doSave(View v) {
-
+        SharedPreferences sharedPreferences = getSharedPreferences("SAVE_INFO", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("name", nameText.getText().toString());
+        editor.putInt("score", Integer.valueOf(scoreText.getText().toString()));
+        editor.apply();
     }
 
     public void doLoad(View v) {
+        SharedPreferences sharedPreferences = getSharedPreferences("SAVE_INFO", Context.MODE_PRIVATE);
 
+        if (sharedPreferences.contains("name")) {
+            nameText.setText(sharedPreferences.getString("name","-"));
+        }
+        if (sharedPreferences.contains("score")) {
+            scoreText.setText(""+sharedPreferences.getInt("score",0 ));
+        }
     }
 }
