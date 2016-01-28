@@ -49,5 +49,6 @@ public class SharedPrefsActivity extends AppCompatActivity {
         if (sharedPreferences.contains("score")) {
             scoreText.setText(""+sharedPreferences.getInt("score",0 ));
         }
+
     }
 }
